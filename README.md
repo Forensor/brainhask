@@ -62,7 +62,7 @@ As the original language, Brainhask has only eight commands based in the followi
 
 ## Usage
 
-Download the binary, open your terminal and move to the .exe path. The file extension can be any plain text, but convention uses *.bhs*.
+[Download the binary](https://github.com/Forensor/brainhask/releases), open your terminal and move to the .exe path. The input file extension can be any plain text, but *.bhs* is used by convention.
 
 Commands:
 
