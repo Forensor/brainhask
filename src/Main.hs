@@ -24,14 +24,14 @@ getFileContents filename = do
 
 printHelp :: IO ()
 printHelp = do
-  putStrLn "Brainhask v0.1.0"
+  putStrLn $ "\x1b[32m" ++ "Brainhask v0.1.0" ++ "\x1b[0m"
   putStrLn "Usage:\n"
-  putStrLn "\tbhs <filename> Executes the program passed by the input file."
+  putStrLn $ "\x1b[36m" ++ "\tbhs <filename> Executes the program passed by the input file."
   putStrLn "\tbhs -i <input> Executes the program passed by the input line."
   putStrLn "\tbhs repl       Starts the Brainhask repl. Use ':q' to quit."
-  putStrLn "\tbhs help       Prints this prompt.\n"
+  putStrLn $ "\tbhs help       Prints this prompt.\n" ++ "\x1b[0m"
   putStrLn "Full details can be found in the official repository:\n"
-  putStrLn "\thttps://github.com/Forensor/brainhask\n"
+  putStrLn "\thttps://github.com/Forensor/brainhask"
 
 repl :: IORef (Tape Int) -> IO ()
 repl iot = do
@@ -159,5 +159,6 @@ parse ('-' : xs) = DecrementByte : parse xs
 parse (',' : xs) = InputByte : parse xs
 parse ('.' : xs) = OutputByte : parse xs
 parse ('[' : xs) = Loop (parse xs) : parse (removeLoop 1 xs)
-parse (']' : xs) = []
+parse (']':_) = []
+parse (_:xs) = parse xs
 parse xs = []

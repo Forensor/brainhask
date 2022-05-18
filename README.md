@@ -60,33 +60,27 @@ As the original language, Brainhask has only eight commands based in the followi
 <td>If the byte at the data pointer is nonzero, then instead of moving the instruction pointer forward to the next command, jump it <i>back</i> to the command after the <i>matching</i> <code>[</code> command.
 </td></tr></tbody></table>
 
-## Getting Started
+## Usage
 
-Install [create-elm-app](https://github.com/halfzebra/create-elm-app):
+Download the binary, open your terminal and move to the .exe path. The file extension can be any plain text, but convention uses *.bhs*.
 
-```cmd
-npm install -g create-elm-app
-```
+Commands:
 
-Here are some useful commands:
+`bhs <filename>` - Executes the program passed by the input file.
 
-### `elm-app start`
+`bhs -i <input>` - Executes the program passed by the input line.
 
-Run the app in development mode.
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+`bhs help` - Prints the help message.
 
-### `elm-app build`
+<img src="./res/sample.gif" />
 
-Builds the app for production to the `build` folder.
-It bundles Elm app and optimizes the build for the best performance.
+`bhs repl` - Starts the Brainhask repl. Use ':q' to quit.
 
-The build is minified, and the filenames include the hashes.
+<img src="./res/repl.gif" />
 
-## Future changes
+## Contribute
 
-TAI used to have a [minimax algorithm](https://en.wikipedia.org/wiki/Alpha%E2%80%93beta_pruning). I have tried to implement it in a functional way in Elm, but it took way too long to make the moves. In a close future I would like to add this to the project.
-
-[Here](https://forensor.github.io/tai/)'s the legacy version including the AI.
+Any bugfix, idea, or request can be resolved by [opening an issue](https://github.com/Forensor/brainhask/issues).
 
 ## License
 
